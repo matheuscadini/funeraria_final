@@ -27,7 +27,7 @@ class LoginScreen extends StatelessWidget {
                   height: 150,
                   width: 150,
                   child: Image.asset(
-                    "caixao.png",
+                    "assets/caixao.png",
                     color: Colors.black,
                   )),
               SizedBox(
