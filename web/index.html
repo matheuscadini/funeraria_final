@@ -40,7 +40,20 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyATt4XBKXgM-lzKN-aa1uoix6XMbz4cDb8",
+        authDomain: "fir-funeraria.firebaseapp.com",
+        databaseURL: "https://fir-funeraria.firebaseio.com",
+        projectId: "fir-funeraria",
+        storageBucket: "fir-funeraria.appspot.com",
+        messagingSenderId: "934331916847",
+        appId: "1:934331916847:web:45ff55a2159e398bec1cda",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
