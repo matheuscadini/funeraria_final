@@ -61,8 +61,8 @@ class _CreateNewOxScreen extends State<VisualizarCaixaoScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
         ),
-        height: 550,
-        width: 950,
+        height: 600,
+        width: 1100,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(32, 42, 32, 10),
           child: Column(

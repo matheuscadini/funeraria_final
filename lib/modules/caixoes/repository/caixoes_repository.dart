@@ -31,8 +31,8 @@ class CaixaoRepository {
     return listaCaixoes;
   }
 
-  FutureOr<String> getImageCaixao(String nameImage) {
-    return fb.FirebaseStorage.instance
+  FutureOr<String> getImageCaixao(String nameImage) async {
+    return await fb.FirebaseStorage.instance
         .refFromURL('gs://fir-funeraria.appspot.com')
         .child(nameImage)
         .getDownloadURL();
