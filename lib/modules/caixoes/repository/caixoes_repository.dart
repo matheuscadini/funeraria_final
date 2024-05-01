@@ -32,10 +32,17 @@ class CaixaoRepository {
   }
 
   FutureOr<String> getImageCaixao(String nameImage) async {
-    return await fb.FirebaseStorage.instance
+    print("gs://fir-funeraria.appspot.com/" + nameImage);
+    final gsReference = fb.FirebaseStorage.instance
+        .refFromURL("gs://fir-funeraria.appspot.com/" + nameImage);
+    print(gsReference);
+    final imageUrl = await fb.FirebaseStorage.instance
         .refFromURL('gs://fir-funeraria.appspot.com')
         .child(nameImage)
         .getDownloadURL();
+
+    print("deu certo");
+    return imageUrl;
   }
 
   deleteCaixoes(String id) {

@@ -61,8 +61,8 @@ class _CreateNewOxScreen extends State<VisualizarCaixaoScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
         ),
-        height: 600,
-        width: 1100,
+        height: 800,
+        width: 1400,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(32, 42, 32, 10),
           child: Column(
@@ -73,7 +73,7 @@ class _CreateNewOxScreen extends State<VisualizarCaixaoScreen> {
                   const Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        "Cadastrar novo Caixão",
+                        "Compra de Caixão",
                       )),
                   Row(
                     children: [
@@ -361,6 +361,20 @@ class _CreateNewOxScreen extends State<VisualizarCaixaoScreen> {
   }
 
   void compraCaixao() async {
+    print(int.parse(textQuantidadeAlto.value.text) +
+        widget
+            .caixaoController.caixaoSelectedEdition.value.quantidadeTipoAlto!);
+    print(int.parse(textQuantidadeNormal.value.text) +
+        widget.caixaoController.caixaoSelectedEdition.value
+            .quantidadeTipoNormal!);
+    print(int.parse(textQuantidadeGordo.value.text) +
+        widget
+            .caixaoController.caixaoSelectedEdition.value.quantidadeTipoGordo!);
+    print(int.parse(textQuantidadeAltoGordo.value.text) +
+        widget
+            .caixaoController.caixaoSelectedEdition.value.quantidadeGordoAlto!);
+    print(widget.caixaoController.caixaoSelectedEdition.value.idCaixao!);
+
     await widget.caixaoController.editCaixoes(
         quantidadeAlto: int.parse(textQuantidadeAlto.value.text) +
             widget.caixaoController.caixaoSelectedEdition.value
@@ -374,8 +388,8 @@ class _CreateNewOxScreen extends State<VisualizarCaixaoScreen> {
         quantidadeAltoGordo: int.parse(textQuantidadeAltoGordo.value.text) +
             widget.caixaoController.caixaoSelectedEdition.value
                 .quantidadeGordoAlto!,
-        datacompra: DateTime.now(),
-        id: widget.caixaoController.caixaoSelectedEdition.value.id!);
+        //datacompra: DateTime.now(),
+        id: widget.caixaoController.caixaoSelectedEdition.value.idCaixao!);
 
     clearText();
     snackbarWidget(
